@@ -26,7 +26,7 @@ data class Credit(
         val status: Status = Status.IN_PROGRESS,
 
         @ManyToOne
-        val costumer: Costumer? = null,
+        var costumer: Costumer? = null,
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
