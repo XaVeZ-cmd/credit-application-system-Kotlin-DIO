@@ -4,8 +4,8 @@ import jakarta.persistence.*
 import java.math.BigDecimal
 
 @Entity
-@Table(name = "costumer")
-data class Costumer(
+@Table(name = "customer")
+data class Customer(
 
         @Column(nullable = false)
         var firstName: String = "",
@@ -14,7 +14,7 @@ data class Costumer(
         var lastName: String = "",
 
         @Column(nullable = false, unique = true)
-        val cpf: String,
+        val cpf: String = "",
 
         @Column(nullable = false, unique = true)
         var email: String = "",
@@ -32,10 +32,10 @@ data class Costumer(
         @Column(nullable = false)
         @OneToMany(fetch = FetchType.LAZY,
                 cascade = arrayOf(CascadeType.REMOVE, CascadeType.REMOVE),
-                mappedBy = "costumer")
+                mappedBy = "customer")
         var credits: List<Credit> = mutableListOf(),
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long? = null
+        var id: Long? = null
 )

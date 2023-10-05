@@ -6,9 +6,9 @@ spring:
     password:
   jpa:
     show-sql: true
-    hibernate:
-      properties:
-        hibernate.formal_sql: true
+#    hibernate:
+    properties:
+      hibernate.formal_sql: true
   h2:
     console:
       enabled: true
